@@ -47,11 +47,7 @@ socket.on('data', function (data) {
 });
 
 function weightForFollowers(followers_count) {
-  return logB(followers_count/20.0 + 1, 10);
-}
-
-function logB(x, base) {
-	return Math.log(x)/Math.log(base);
+  return Math.log(Math.sqrt(followers_count/20));
 }
 
 function drawTweet(text, url, lat, lon, weight, color) {
